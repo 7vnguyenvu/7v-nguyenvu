@@ -1,12 +1,101 @@
 .wraper {
     width: 100%;
     height: var(--header-height, 60px);
-    box-shadow: 0 1px rgb(90, 90, 90);
+    box-shadow: 0 1px var(--shadow);
     display: flex;
     justify-content: center;
 }
 
 .inner {
-    height: 100%;
+    height: var(--parent-width);
     width: var(--display-width);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.logo {
+    background-color: rgb(124, 124, 124);
+}
+
+.search {
+    position: relative;
+    width: var(--search-width);
+    height: var(--fifty-percent);
+    display: flex;
+    align-items: center;
+    border-radius: 50px;
+    overflow: hidden;
+    box-shadow: 1px 1px var(--shadow);
+    // border: 1px solid var(--shadow);
+
+    &::after {
+        content: '';
+        width: 1.2px;
+        height: var(--seventy-percent);
+        border-radius: 50px;
+        background-color: var(--shadow);
+        position: absolute;
+        right: var(--fifteen-percent);
+    }
+
+    &:focus-within {
+        box-shadow: 1px 1px var(--light);
+    }
+
+    input {
+        flex: 1;
+        height: var(--parent-width);
+        padding-left: 12px;
+        background-color: transparent;
+        color: var(--text);
+    }
+
+    // Bắt sự kiện khi input không show placeholder
+    input:not(:placeholder-shown) ~ .clear-btn {
+        display: flex;
+    }
+    input:not(:placeholder-shown) ~ .search-btn {
+        opacity: 1;
+
+        &:hover {
+            opacity: 0.6;
+        }
+        &:active {
+            opacity: 1;
+        }
+    }
+
+    .clear-btn,
+    .search-btn {
+        height: var(--parent-width);
+        align-items: center;
+        justify-content: center;
+
+        &:hover {
+            cursor: pointer;
+        }
+    }
+
+    .clear-btn {
+        display: none;
+        width: var(--ten-percent);
+        font-size: 1rem;
+        opacity: 0.6;
+    }
+
+    .search-btn {
+        display: flex;
+        width: var(--fifteen-percent);
+        font-size: 1.25rem;
+        color: var(--pink);
+        opacity: 0.6;
+
+        &:hover {
+            opacity: 1;
+        }
+        &:active {
+            opacity: 0.6;
+        }
+    }
 }

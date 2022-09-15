@@ -3,14 +3,36 @@
 
 :root {
     // Color
-    --primary: #eff103;
+    --primary: #e8eb4f;
     --dark: #202124;
-    --default: #fff;
+    --text: #fff;
+    --pink: #f73ab1;
+    --shadow: #5a5a5a;
+    --light: #cccccc;
 
     // Layout dimension
     --header-height: 60px;
     --sidebar-width: 356px;
     --display-width: 1150px;
+
+    // %
+    --parent-width: 100%;
+    --ninety-percent: 90%;
+    --eighty-percent: 80%;
+    --seventy-percent: 70%;
+    --sixty-percent: 60%;
+    --fifty-percent: 50%;
+    --forty-percent: 40%;
+    --thirty-percent: 30%;
+    --twenty-percent: 20%;
+    --fifteen-percent: 15%;
+    --ten-percent: 10%;
+    --five-percent: 5%;
+
+    // Header
+    --search-width: 320px;
+    // Sidebar
+    // Content
 }
 
 * {
@@ -27,5 +49,17 @@ body {
     background-color: var(--dark);
     font-family: 'IBM Plex Sans', sans-serif;
     font-size: 1.6rem;
-    color: var(--default);
+    color: var(--text);
+}
+
+button,
+input,
+[tabindex] {
+    outline: none;
+    border: none;
+}
+
+a[href] {
+    color: var(--pink);
+    text-decoration: none;
 }
