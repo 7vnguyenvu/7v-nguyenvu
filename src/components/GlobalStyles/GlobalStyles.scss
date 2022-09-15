@@ -2,12 +2,20 @@
 @import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@200;300;400;500;600;700&family=Quicksand:wght@500;600&display=swap');
 
 :root {
+    // Color
     --primary: #eff103;
     --dark: #202124;
     --default: #fff;
+
+    // Layout dimension
+    --header-height: 60px;
+    --sidebar-width: 356px;
+    --display-width: 1150px;
 }
 
 * {
+    margin: 0;
+    padding: 0;
     box-sizing: border-box;
 }
 

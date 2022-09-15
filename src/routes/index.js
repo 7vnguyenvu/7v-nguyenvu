@@ -5,7 +5,7 @@ import Profile from '../pages/Profile';
 import Upload from '../pages/Upload';
 
 //Layout
-import { HeaderOnly } from '../components/Layout';
+import { HeaderOnly } from '../components/Layouts';
 
 const publicRoutes = [
     { path: '/', component: HomePage },
