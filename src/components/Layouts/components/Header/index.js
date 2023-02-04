@@ -1,27 +1,41 @@
 import classNames from 'classnames/bind';
-import styles from './Header.module.scss';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faCircleXmark, faMagnifyingGlass } from '@fortawesome/free-solid-svg-icons';
+import { faBell } from '@fortawesome/free-solid-svg-icons';
+import { Link } from 'react-router-dom';
+
+import styles from './Header.module.scss';
+import Button from '../../../Button';
+import Search from '../Search';
 
 const cx = classNames.bind(styles);
 function Header() {
+    const user_Login = true;
+
     return (
         <header className={cx('wraper')}>
             <div className={cx('inner')}>
-                <div className={cx('logo')}>
-                    <img src="#" alt="Logo" />
-                </div>
-                <div className={cx('search')}>
-                    <input type="text" placeholder="Search..."></input>
-                    <div className={cx('clear-btn')}>
-                        <FontAwesomeIcon icon={faCircleXmark} />
-                    </div>
-                    <div className={cx('search-btn')}>
-                        <FontAwesomeIcon icon={faMagnifyingGlass} />
-                    </div>
-                </div>
+                <Link to="/" className={cx('logo')}>
+                    <img src="7V_NguyenVu.png" alt="Logo" />
+                </Link>
+
+                <Search />
+
                 <div className={cx('action')}>
-                    <a href="#">Đăng ký hay đăng nhập chỗ này nè Ông cố ơi!</a>
+                    {user_Login ? (
+                        <>
+                            <div className={cx('notify-btn')}>
+                                <FontAwesomeIcon icon={faBell} />
+                            </div>
+                            <div className={cx('use-avatar')}>
+                                <img src="avatar.png" alt="avatar" />
+                            </div>
+                        </>
+                    ) : (
+                        <>
+                            <Button text>Sign up</Button>
+                            <Button primary>Sign in</Button>
+                        </>
+                    )}
                 </div>
             </div>
         </header>

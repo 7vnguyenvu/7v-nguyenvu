@@ -1,0 +1,48 @@
+.use {
+    width: var(--parent-width);
+    padding: 8px 20px;
+    display: flex;
+    align-items: center;
+
+    &:hover {
+        cursor: pointer;
+        background-color: var(--dark-hover);
+    }
+
+    .use-avatar {
+        width: 36px;
+        height: 36px;
+        background-color: var(--transparent);
+        border-radius: 50px;
+        box-shadow: 0 0 3px var(--primary);
+        overflow: hidden;
+        margin-left: 8px;
+
+        .use-facebook {
+            width: var(--parent-width);
+            height: var(--parent-height);
+            background-color: var(--transparent);
+
+            img {
+                width: var(--parent-width);
+                height: var(--parent-height);
+                position: relative;
+                top: 50%;
+                transform: translateY(-50%);
+            }
+        }
+    }
+
+    .use-body {
+        flex: 1;
+        height: 36px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        padding: 0 12px;
+
+        h6 {
+            opacity: 0.6;
+        }
+    }
+}

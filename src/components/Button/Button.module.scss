@@ -1,0 +1,38 @@
+.wrapper {
+    font-size: 1.6rem;
+    font-weight: 600;
+    padding: 6px 16px;
+    border-radius: 4px;
+    cursor: pointer;
+    color: var(--text);
+    box-shadow: 1px 1px 2px currentColor;
+    background-color: var(--transparent);
+
+    &:hover {
+        background-color: var(--dark-hover);
+    }
+
+    + .wrapper {
+        margin-left: 12px;
+    }
+}
+
+.text {
+    color: var(--text);
+    box-shadow: none;
+
+    &:hover {
+        background-color: var(--transparent);
+        text-decoration: underline;
+    }
+}
+
+.primary {
+    color: var(--primary);
+    box-shadow: 1px 1px 2px currentColor;
+}
+
+.pink {
+    color: var(--pink);
+    box-shadow: 1px 1px 2px currentColor;
+}

@@ -14,88 +14,48 @@
     justify-content: space-between;
 }
 
+// Logo
 .logo {
-    background-color: rgb(124, 124, 124);
+    // width: var(--thirty-percent);
+    background-color: transparent;
+
+    img {
+        width: 150px;
+        height: 42px;
+    }
 }
 
-.search {
-    position: relative;
-    width: var(--search-width);
-    height: var(--fifty-percent);
+// Action
+.action {
+    // width: var(--thirty-percent);
     display: flex;
     align-items: center;
-    border-radius: 50px;
-    overflow: hidden;
-    box-shadow: 1px 1px var(--shadow);
-    // border: 1px solid var(--shadow);
+    justify-content: end;
 
-    &::after {
-        content: '';
-        width: 1.2px;
-        height: var(--seventy-percent);
-        border-radius: 50px;
-        background-color: var(--shadow);
-        position: absolute;
-        right: var(--fifteen-percent);
-    }
-
-    &:focus-within {
-        box-shadow: 1px 1px var(--light);
-    }
-
-    input {
-        flex: 1;
-        height: var(--parent-width);
-        padding-left: 12px;
-        background-color: transparent;
-        color: var(--text);
-    }
-
-    // Bắt sự kiện khi input không show placeholder
-    input:not(:placeholder-shown) ~ .clear-btn {
-        display: flex;
-    }
-    input:not(:placeholder-shown) ~ .search-btn {
-        opacity: 1;
-
-        &:hover {
-            opacity: 0.6;
-        }
-        &:active {
-            opacity: 1;
-        }
-    }
-
-    .clear-btn,
-    .search-btn {
-        height: var(--parent-width);
-        align-items: center;
-        justify-content: center;
+    .notify-btn {
+        font-size: 1.6rem;
+        padding: 8px;
 
         &:hover {
             cursor: pointer;
         }
     }
 
-    .clear-btn {
-        display: none;
-        width: var(--ten-percent);
-        font-size: 1rem;
-        opacity: 0.6;
-    }
+    .use-avatar {
+        width: 28px;
+        height: 28px;
+        background-color: transparent;
+        border-radius: 50px;
+        box-shadow: 0 0 3px var(--primary);
+        overflow: hidden;
+        margin-left: 8px;
 
-    .search-btn {
-        display: flex;
-        width: var(--fifteen-percent);
-        font-size: 1.25rem;
-        color: var(--pink);
-        opacity: 0.6;
-
-        &:hover {
-            opacity: 1;
-        }
-        &:active {
-            opacity: 0.6;
+        img {
+            width: var(--parent-width);
+            height: var(--parent-height);
+            position: relative;
+            top: 50%;
+            transform: translateY(-50%);
         }
     }
 }
