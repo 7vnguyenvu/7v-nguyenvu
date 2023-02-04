@@ -22,6 +22,7 @@ function Search() {
 
     useEffect(() => {
         if (!searchValue.trim()) {
+            setSearchResult([]);
             return;
         }
 
