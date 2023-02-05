@@ -3,8 +3,9 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faBell } from '@fortawesome/free-solid-svg-icons';
 import { Link } from 'react-router-dom';
 
+import routes from '../../../config/routes';
 import styles from './Header.module.scss';
-import Button from '../../../Button';
+import Button from '../../../components/Button';
 import Search from '../Search';
 
 const cx = classNames.bind(styles);
@@ -14,7 +15,7 @@ function Header() {
     return (
         <header className={cx('wraper')}>
             <div className={cx('inner')}>
-                <Link to="/" className={cx('logo')}>
+                <Link to={routes.home} className={cx('logo')}>
                     <img src="7V_NguyenVu.png" alt="Logo" />
                 </Link>
 

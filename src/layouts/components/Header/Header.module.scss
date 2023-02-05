@@ -4,6 +4,9 @@
     box-shadow: 0 1px var(--shadow);
     display: flex;
     justify-content: center;
+    position: fixed;
+    background-color: var(--dark);
+    z-index: 7;
 }
 
 .inner {
@@ -30,7 +33,7 @@
     // width: var(--thirty-percent);
     display: flex;
     align-items: center;
-    justify-content: end;
+    justify-content: flex-end;
 
     .notify-btn {
         font-size: 1.6rem;

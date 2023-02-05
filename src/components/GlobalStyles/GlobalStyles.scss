@@ -2,6 +2,9 @@
 @import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@200;300;400;500;600;700&family=Quicksand:wght@500;600&display=swap');
 
 :root {
+    //Font
+    --font: 'IBM Plex Sans', sans-serif;
+
     // Color
     --primary: #e8eb4f;
     --dark: #202124;
@@ -32,7 +35,10 @@
     --five-percent: 5%;
 
     // Header
-    --search-width: 320px;
+    --search-width-short: 300px;
+    --search-width-medium: 320px;
+    --search-width-long: 360px;
+    --search-height: 30px;
     // Sidebar
     // Content
 }
@@ -49,10 +55,42 @@ html {
 
 body {
     background-color: var(--dark);
-    font-family: 'IBM Plex Sans', sans-serif;
+    font-family: var(--font);
     font-size: 1.6rem;
     color: var(--text);
+    overflow-y: overlay;
 }
+
+// Scrollbar
+html *::-webkit-scrollbar {
+    border-radius: 0;
+    width: 8px;
+}
+
+// html *::-webkit-scrollbar {
+//     border-radius: 0;
+//     width: 8px;
+// }
+
+html *::-webkit-scrollbar-thumb {
+    border-radius: 4px;
+    background-color: var(--shadow);
+}
+
+// html *::-webkit-scrollbar-thumb {
+//     border-radius: 4px;
+//     background-color: rgba(22, 24, 35, 0.06);
+// }
+
+html *::-webkit-scrollbar-track {
+    border-radius: 0;
+    background-color: rgba(0, 0, 0, 0);
+}
+
+// html *::-webkit-scrollbar-track {
+//     border-radius: 0;
+//     background-color: rgba(0, 0, 0, 0);
+// }
 
 button,
 input,

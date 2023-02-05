@@ -1,9 +1,11 @@
 // Search
 .search {
     position: relative;
-    width: var(--thirty-percent);
-    height: var(--fifty-percent);
+    // width: var(--thirty-percent);
+    width: var(--search-width-long);
+    height: var(--search-height);
     display: flex;
+    overflow: hidden;
     align-items: center;
     border-radius: 50px;
     box-shadow: 1px 1px var(--shadow);
@@ -15,7 +17,6 @@
         height: var(--seventy-percent);
         border-radius: 50px;
         background-color: var(--shadow);
-        overflow: hidden;
         position: absolute;
         right: var(--fifteen-percent);
     }
@@ -89,11 +90,11 @@
 }
 
 .result {
-    // width: 360px;
-    width: var(--search-width);
+    // width: 320px;
+    width: var(--search-width-medium);
     margin-top: 6px;
     background-color: var(--dark);
-    box-shadow: 0 0 3px var(--light);
+    box-shadow: 0 0 4px var(--light);
     border-radius: 8px;
     overflow: hidden;
     display: flex;

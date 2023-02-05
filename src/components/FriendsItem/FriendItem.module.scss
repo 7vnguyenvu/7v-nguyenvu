@@ -3,6 +3,7 @@
     padding: 8px 20px;
     display: flex;
     align-items: center;
+    background-color: var(--dark);
 
     &:hover {
         cursor: pointer;
@@ -18,18 +19,12 @@
         overflow: hidden;
         margin-left: 8px;
 
-        .use-facebook {
+        img {
             width: var(--parent-width);
             height: var(--parent-height);
-            background-color: var(--transparent);
-
-            img {
-                width: var(--parent-width);
-                height: var(--parent-height);
-                position: relative;
-                top: 50%;
-                transform: translateY(-50%);
-            }
+            position: relative;
+            top: 50%;
+            transform: translateY(-50%);
         }
     }
 
@@ -40,6 +35,7 @@
         flex-direction: column;
         justify-content: space-between;
         padding: 0 12px;
+        color: var(--text);
 
         h6 {
             opacity: 0.6;
