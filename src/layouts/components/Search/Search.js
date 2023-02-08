@@ -58,7 +58,7 @@ function Search() {
     const handleSubmit_Search = (e) => {};
 
     return (
-        <div>
+        <div className={cx('wraper')}>
             <HeadlessTippy
                 interactive
                 placement="bottom"
@@ -78,10 +78,10 @@ function Search() {
                         ref={inputRef}
                         type="text"
                         value={searchValue}
-                        placeholder="Search friends..."
+                        placeholder="Tìm kiếm..."
                         spellCheck={false}
                         onChange={handleOnChange_Search}
-                        onKeyUp={() => console.log('key up')}
+                        onKeyUp={() => console.log('Key up')}
                         onFocus={handleFocus_Search}
                     />
 

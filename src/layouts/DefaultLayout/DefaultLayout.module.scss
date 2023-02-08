@@ -6,10 +6,16 @@
 
 .container {
     width: var(--display-width);
+    max-width: var(--parent-width);
     display: flex;
     margin-top: var(--header-height);
 }
 
 .content {
     flex: 1;
+    margin-left: var(--sidebar-width);
+    // background-color: var(--dark-transparent);
+    background-color: var(--body-color);
+
+    text-align: center;
 }

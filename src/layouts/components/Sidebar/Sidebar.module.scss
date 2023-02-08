@@ -1,3 +1,14 @@
 .wraper {
     width: var(--sidebar-width);
+    flex: 1;
+    // overflow: overlay;
+    background-color: var(--dark);
+    padding-right: 4px;
+    position: fixed;
+
+    .bulkhead {
+        width: var(--parent-width);
+        height: 1px;
+        background-color: var(--shadow);
+    }
 }

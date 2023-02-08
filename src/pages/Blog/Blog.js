@@ -1,14 +1,14 @@
 import classNames from 'classnames/bind';
 
-import styles from './Upload.module.scss';
+import styles from './Blog.module.scss';
 const cx = classNames.bind(styles);
 
-function Upload() {
+function Blog() {
     return (
         <div className={cx('wraper')}>
-            <h2>Viết Blog</h2>
+            <h2>Bài viết</h2>
         </div>
     );
 }
 
-export default Upload;
+export default Blog;

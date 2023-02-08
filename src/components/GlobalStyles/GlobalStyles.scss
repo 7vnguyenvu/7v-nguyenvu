@@ -6,10 +6,13 @@
     --font: 'IBM Plex Sans', sans-serif;
 
     // Color
-    --primary: #e8eb4f;
+    --primary: #f73ab1;
+    --body-color: #202124;
     --dark: #202124;
     --dark-hover: #0f0f14;
+    --dark-transparent: #0f0f1439;
     --text: #fff;
+    --yellow: #e8eb4f;
     --pink: #f73ab1;
     --shadow: #5a5a5a;
     --light: #cccccc;
@@ -17,7 +20,7 @@
 
     // Layout dimension
     --header-height: 60px;
-    --sidebar-width: 356px;
+    --sidebar-width: 80px;
     --display-width: 1150px;
 
     // %
@@ -43,6 +46,11 @@
     // Content
 }
 
+::selection {
+    background-color: var(--primary);
+    color: var(--text);
+}
+
 * {
     margin: 0;
     padding: 0;
@@ -54,7 +62,7 @@ html {
 }
 
 body {
-    background-color: var(--dark);
+    background-color: var(--body-color);
     font-family: var(--font);
     font-size: 1.6rem;
     color: var(--text);
@@ -99,7 +107,7 @@ input,
     border: none;
 }
 
-a[href] {
+a {
     color: var(--pink);
     text-decoration: none;
 }

@@ -1,47 +1,55 @@
-.use {
+.item {
     width: var(--parent-width);
     margin-bottom: 4px;
     padding: 8px 20px;
     border-radius: 8px;
     display: flex;
     align-items: center;
+    color: var(--text);
     background-color: var(--body-color);
     transition: background-color ease-in-out 0.2s;
+
+    &.new {
+        .item-avatar,
+        .item-body {
+            opacity: 1;
+        }
+    }
 
     &:hover {
         cursor: pointer;
         background-color: var(--dark-hover);
     }
 
-    .use-avatar {
-        width: 36px;
-        height: 36px;
-        background-color: var(--transparent);
-        border-radius: 50px;
-        box-shadow: 0 0 3px var(--primary);
-        overflow: hidden;
-        margin-left: 8px;
-
-        img {
-            width: var(--parent-width);
-            height: var(--parent-height);
-            position: relative;
-            top: 50%;
-            transform: translateY(-50%);
-        }
+    .item-icon {
+        opacity: 0.5;
+        width: 24px;
+        height: 24px;
+        color: var(--primary);
+        // align-self: flex-start;
     }
 
-    .use-body {
+    .item-body {
+        opacity: 0.4;
         flex: 1;
         height: 36px;
         display: flex;
         flex-direction: column;
         justify-content: space-between;
         padding: 0 12px;
-        color: var(--text);
 
         h6 {
             opacity: 0.6;
         }
+    }
+
+    .item-status {
+        width: 8px;
+        height: 8px;
+        background-color: #fff;
+        background-clip: content-box;
+        border-radius: 50px;
+        padding: 1px;
+        border: 1px solid #fff;
     }
 }

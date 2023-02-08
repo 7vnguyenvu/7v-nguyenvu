@@ -1,40 +1,83 @@
 import classNames from 'classnames/bind';
+import { useState } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faBell } from '@fortawesome/free-solid-svg-icons';
 import { Link } from 'react-router-dom';
+import HeadlessTippy from '@tippyjs/react/headless';
 
 import routes from '../../../config/routes';
 import styles from './Header.module.scss';
 import Button from '../../../components/Button';
 import Search from '../Search';
+import Notification from './Notification';
+import RoleUser from './RoleUser';
 
 const cx = classNames.bind(styles);
 function Header() {
     const user_Login = true;
+    const [showNotification, setShowNotification] = useState(false);
+    const [showRoleUser, setShowRoleUser] = useState(false);
+
+    const handle_Show_Hide_Notification = () => {
+        setShowNotification(!showNotification);
+    };
+
+    const handle_Show_Hide_RoleUser = () => {
+        setShowRoleUser(!showRoleUser);
+    };
 
     return (
         <header className={cx('wraper')}>
             <div className={cx('inner')}>
-                <Link to={routes.home} className={cx('logo')}>
-                    <img src="7V_NguyenVu.png" alt="Logo" />
-                </Link>
+                <div className={cx('logo-area')}>
+                    <Link to={routes.home} className={cx('logo')}>
+                        <img src="7V_NguyenVu_Light.png" alt="Logo" />
+                    </Link>
+                </div>
 
                 <Search />
 
                 <div className={cx('action')}>
                     {user_Login ? (
                         <>
-                            <div className={cx('notify-btn')}>
-                                <FontAwesomeIcon icon={faBell} />
+                            <div>
+                                <HeadlessTippy
+                                    interactive
+                                    placement="bottom-end"
+                                    visible={showNotification}
+                                    render={(attrs) => (
+                                        <div className={cx('notification-list')} tabIndex="-1" {...attrs}>
+                                            <Notification />
+                                        </div>
+                                    )}
+                                    onClickOutside={handle_Show_Hide_Notification}
+                                >
+                                    <div className={cx('notification-btn')} onClick={handle_Show_Hide_Notification}>
+                                        <FontAwesomeIcon icon={faBell} />
+                                    </div>
+                                </HeadlessTippy>
                             </div>
-                            <div className={cx('use-avatar')}>
-                                <img src="avatar.png" alt="avatar" />
-                            </div>
+
+                            <HeadlessTippy
+                                interactive
+                                placement="bottom-end"
+                                visible={showRoleUser}
+                                render={(attrs) => (
+                                    <div className={cx('role-user')} tabIndex="-1" {...attrs}>
+                                        <RoleUser />
+                                    </div>
+                                )}
+                                onClickOutside={handle_Show_Hide_RoleUser}
+                            >
+                                <div className={cx('use-avatar')} onClick={handle_Show_Hide_RoleUser}>
+                                    <img src="avatar.png" alt="avatar" />
+                                </div>
+                            </HeadlessTippy>
                         </>
                     ) : (
                         <>
-                            <Button text>Sign up</Button>
-                            <Button primary>Sign in</Button>
+                            <Button text>Đăng ký</Button>
+                            <Button primary>Đăng nhập</Button>
                         </>
                     )}
                 </div>

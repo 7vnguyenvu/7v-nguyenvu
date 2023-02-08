@@ -12,7 +12,7 @@ function FreindItem({ data }) {
             </div>
             <div className={cx('use-body')}>
                 <h4>{data.full_name}</h4>
-                <h6>{data.nickname}</h6>
+                <h6>@{data.nickname}</h6>
             </div>
         </Link>
     );

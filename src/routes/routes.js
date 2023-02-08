@@ -1,5 +1,6 @@
 import HomePage from '../pages/Home';
-import ExplorePage from '../pages/Explore';
+import CommentsPage from '../pages/Comments';
+import BlogPage from '../pages/Blog';
 import FriendsPage from '../pages/Friends';
 import Profile from '../pages/Profile';
 import Upload from '../pages/Upload';
@@ -11,10 +12,12 @@ import { HeaderOnly } from '../layouts';
 
 const publicRoutes = [
     { path: routes.home, component: HomePage },
-    { path: routes.explore, component: ExplorePage },
+    { path: routes.comments, component: CommentsPage },
+    { path: routes.blog, component: BlogPage },
     { path: routes.friends, component: FriendsPage },
     { path: routes.profile, component: Profile },
-    { path: routes.upload, component: Upload, layout: HeaderOnly },
+    { path: routes.upload, component: Upload },
+    // { path: routes.upload, component: Upload, layout: HeaderOnly },
 ];
 const privateRoutes = [];
 
