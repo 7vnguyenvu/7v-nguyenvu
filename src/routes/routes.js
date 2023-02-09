@@ -15,9 +15,8 @@ const publicRoutes = [
     { path: routes.comments, component: CommentsPage },
     { path: routes.blog, component: BlogPage },
     { path: routes.friends, component: FriendsPage },
-    { path: routes.profile, component: Profile },
+    { path: routes.profile, component: Profile, layout: HeaderOnly },
     { path: routes.upload, component: Upload },
-    // { path: routes.upload, component: Upload, layout: HeaderOnly },
 ];
 const privateRoutes = [];
 

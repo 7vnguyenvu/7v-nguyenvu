@@ -6,9 +6,9 @@ import { faEnvelope, faEnvelopeOpen } from '@fortawesome/free-solid-svg-icons';
 import styles from './Item.module.scss';
 const cx = classNames.bind(styles);
 
-function Item({ data }) {
+function Item({ data, itemOnClick }) {
     return (
-        <Link to="/#" className={cx('item', data.status && 'new')}>
+        <Link to="#" className={cx('item', data.status && 'new')} onClick={() => itemOnClick(true)}>
             <FontAwesomeIcon icon={data.status ? faEnvelope : faEnvelopeOpen} className={cx('item-icon')} />
             <div className={cx('item-body')}>
                 <h4>{data.tilte}</h4>

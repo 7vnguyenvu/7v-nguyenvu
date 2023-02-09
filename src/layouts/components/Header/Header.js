@@ -26,6 +26,14 @@ function Header() {
         setShowRoleUser(!showRoleUser);
     };
 
+    const on_Children_Clicked_Notification = (boolean) => {
+        boolean && handle_Show_Hide_Notification();
+    };
+
+    const on_Children_Clicked_RoleUser = (boolean) => {
+        boolean && handle_Show_Hide_RoleUser();
+    };
+
     return (
         <header className={cx('wraper')}>
             <div className={cx('inner')}>
@@ -47,7 +55,7 @@ function Header() {
                                     visible={showNotification}
                                     render={(attrs) => (
                                         <div className={cx('notification-list')} tabIndex="-1" {...attrs}>
-                                            <Notification />
+                                            <Notification onChildrentClicked={on_Children_Clicked_Notification} />
                                         </div>
                                     )}
                                     onClickOutside={handle_Show_Hide_Notification}
@@ -64,13 +72,13 @@ function Header() {
                                 visible={showRoleUser}
                                 render={(attrs) => (
                                     <div className={cx('role-user')} tabIndex="-1" {...attrs}>
-                                        <RoleUser />
+                                        <RoleUser onChildrentClicked={on_Children_Clicked_RoleUser} />
                                     </div>
                                 )}
                                 onClickOutside={handle_Show_Hide_RoleUser}
                             >
                                 <div className={cx('use-avatar')} onClick={handle_Show_Hide_RoleUser}>
-                                    <img src="avatar.png" alt="avatar" />
+                                    <img src="users/admin.png" alt="avatar" />
                                 </div>
                             </HeadlessTippy>
                         </>

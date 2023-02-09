@@ -1,11 +1,12 @@
 import classNames from 'classnames/bind';
+import { useState } from 'react';
 import { Link } from 'react-router-dom';
 
 import routes from '../../../../config/routes';
 import styles from '../Header.module.scss';
 const cx = classNames.bind(styles);
 
-function RoleUser() {
+function RoleUser({ onChildrentClicked }) {
     const user = {
         id: '1',
         full_name: 'Yen Ngoc',
@@ -24,19 +25,19 @@ function RoleUser() {
                     </div>
                 </div>
             </header>
-            <body>
+            <main>
                 <div className={cx('bulkhead')}></div>
-                <Link to={`/@${user.nickname}`} className={cx('item')}>
+                <Link to={`/@${user.nickname}`} className={cx('item')} onClick={() => onChildrentClicked(true)}>
                     <h5>Thông tin cá nhân</h5>
                 </Link>
-                <Link to={routes.blog} className={cx('item')}>
+                <Link to={routes.blog} className={cx('item')} onClick={() => onChildrentClicked(true)}>
                     <h5>Viết Blog</h5>
                 </Link>
                 <div className={cx('bulkhead')}></div>
-                <Link to={routes.login} className={cx('item')}>
+                <Link to="#" className={cx('item')} onClick={() => onChildrentClicked(true)}>
                     <h5>Đăng xuất</h5>
                 </Link>
-            </body>
+            </main>
         </div>
     );
 }

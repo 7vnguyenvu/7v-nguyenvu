@@ -5,12 +5,16 @@ import Item from './Item';
 import styles from '../Header.module.scss';
 const cx = classNames.bind(styles);
 
-function Notification() {
-    const [searchResult, setSearchResult] = useState([]);
+function Notification({ onChildrentClicked }) {
+    const [notification_List, setNotification_List] = useState([]);
+
+    const item_On_Clicked = (boolean) => {
+        boolean && onChildrentClicked(true);
+    };
 
     useEffect(() => {
         // Fake API -> Dùng Tạm FriendItem để code giao diện
-        setSearchResult([
+        setNotification_List([
             {
                 id: '1',
                 tilte: 'Thông báo 1',
@@ -119,7 +123,11 @@ function Notification() {
                 <p>Đánh dấu đã đọc</p>
             </header>
 
-            <body>{searchResult.map((result) => <Item key={result.id} data={result} />).reverse()}</body>
+            <main>
+                {notification_List
+                    .map((result) => <Item key={result.id} data={result} itemOnClick={item_On_Clicked} />)
+                    .reverse()}
+            </main>
         </div>
     );
 }

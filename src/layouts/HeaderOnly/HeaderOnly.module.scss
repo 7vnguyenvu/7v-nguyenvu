@@ -1,0 +1,16 @@
+.wraper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.container {
+    margin-top: var(--header-height);
+}
+
+.content {
+    background-color: var(--body-color);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}

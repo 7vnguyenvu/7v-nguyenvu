@@ -5,6 +5,7 @@
     display: flex;
     justify-content: center;
     position: fixed;
+    top: 0;
     background-color: var(--body-color);
     z-index: 7;
 }
@@ -64,9 +65,6 @@
         img {
             width: var(--parent-width);
             height: var(--parent-height);
-            position: relative;
-            top: 50%;
-            transform: translateY(-50%);
         }
     }
 }
@@ -116,7 +114,7 @@
         }
     }
 
-    body {
+    main {
         height: 280px;
         overflow-y: scroll;
         padding: 0 4px;
@@ -183,7 +181,7 @@
         }
     }
 
-    body {
+    main {
         overflow: hidden;
         display: flex;
         flex-direction: column;
