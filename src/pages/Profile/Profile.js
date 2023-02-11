@@ -58,6 +58,8 @@ function Profile() {
         },
     ];
 
+    const user = fakeUsers[1];
+
     return (
         <div className={cx('wraper')}>
             <header>
@@ -66,25 +68,25 @@ function Profile() {
                     style={{ background: 'url("cover_image_2.png") no-repeat center / 100% 100%' }}
                 >
                     <div className={cx('link-custom')}>
-                        {fakeUsers[2].facebook_url !== '#' && (
+                        {user.facebook_url !== '#' && (
                             <a
-                                href={fakeUsers[2].facebook_url}
+                                href={user.facebook_url}
                                 style={{ background: 'url("logo_fb.png") no-repeat center / 100% 100%' }}
                                 target="_blank"
                                 rel="noreferrer"
                             ></a>
                         )}
-                        {fakeUsers[2].tiktok_url !== '#' && (
+                        {user.tiktok_url !== '#' && (
                             <a
-                                href={fakeUsers[2].tiktok_url}
+                                href={user.tiktok_url}
                                 style={{ background: 'url("logo_tik.png") no-repeat center / 100% 100%' }}
                                 target="_blank"
                                 rel="noreferrer"
                             ></a>
                         )}
-                        {fakeUsers[2].youtube_url !== '#' && (
+                        {user.youtube_url !== '#' && (
                             <a
-                                href={fakeUsers[2].youtube_url}
+                                href={user.youtube_url}
                                 style={{ background: 'url("logo_yt.png") no-repeat center / 100% 100%' }}
                                 target="_blank"
                                 rel="noreferrer"
@@ -96,10 +98,10 @@ function Profile() {
                     <div className={cx('avatar')}>
                         <div
                             className={cx('img')}
-                            style={{ background: `url(${fakeUsers[2].image}) no-repeat center / 101% 101%` }}
+                            style={{ background: `url(${user.image}) no-repeat center / 101% 101%` }}
                         ></div>
                     </div>
-                    <h1>{fakeUsers[2].name}</h1>
+                    <h1>{user.name}</h1>
                 </div>
             </header>
 
