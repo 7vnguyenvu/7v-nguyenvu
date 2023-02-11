@@ -1,5 +1,4 @@
 import classNames from 'classnames/bind';
-import { useState } from 'react';
 import { Link } from 'react-router-dom';
 
 import routes from '../../../../config/routes';
@@ -9,9 +8,9 @@ const cx = classNames.bind(styles);
 function RoleUser({ onChildrentClicked }) {
     const user = {
         id: '1',
-        full_name: 'Yen Ngoc',
-        nickname: 'Rùa Nhi của Tôi',
-        avatar: 'avatar.png',
+        full_name: 'Admin',
+        nickname: 'Nhi_turtle',
+        avatar: 'users/admin.png',
     };
 
     return (

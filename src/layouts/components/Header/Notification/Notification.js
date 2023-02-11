@@ -1,9 +1,6 @@
-import classNames from 'classnames/bind';
 import { useEffect, useState } from 'react';
 
 import Item from './Item';
-import styles from '../Header.module.scss';
-const cx = classNames.bind(styles);
 
 function Notification({ onChildrentClicked }) {
     const [notification_List, setNotification_List] = useState([]);

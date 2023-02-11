@@ -16,7 +16,7 @@ function Search() {
     const [searchResult, setSearchResult] = useState([]);
     const [showResult, setShowResult] = useState(true);
 
-    const debouncedValue = useDebounce(searchValue, 300);
+    const debouncedValue = useDebounce(searchValue, 500);
 
     const inputRef = useRef();
 

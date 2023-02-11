@@ -41,7 +41,7 @@ function Profile() {
             image: 'friends/Thao_Vy.jpg',
             facebook_url: 'https://www.facebook.com/iamvie0305',
             tiktok_url: 'https://www.tiktok.com/@_imv901',
-            youtube_url: '#',
+            youtube_url: 'https://www.youtube.com/@thaovytranthi2956',
         },
         {
             id: 3,
@@ -66,25 +66,28 @@ function Profile() {
                     style={{ background: 'url("cover_image_2.png") no-repeat center / 100% 100%' }}
                 >
                     <div className={cx('link-custom')}>
-                        {fakeUsers[0].facebook_url !== '#' && (
+                        {fakeUsers[2].facebook_url !== '#' && (
                             <a
-                                href={fakeUsers[0].facebook_url}
+                                href={fakeUsers[2].facebook_url}
                                 style={{ background: 'url("logo_fb.png") no-repeat center / 100% 100%' }}
                                 target="_blank"
+                                rel="noreferrer"
                             ></a>
                         )}
-                        {fakeUsers[0].tiktok_url !== '#' && (
+                        {fakeUsers[2].tiktok_url !== '#' && (
                             <a
-                                href={fakeUsers[0].tiktok_url}
+                                href={fakeUsers[2].tiktok_url}
                                 style={{ background: 'url("logo_tik.png") no-repeat center / 100% 100%' }}
                                 target="_blank"
+                                rel="noreferrer"
                             ></a>
                         )}
-                        {fakeUsers[0].youtube_url !== '#' && (
+                        {fakeUsers[2].youtube_url !== '#' && (
                             <a
-                                href={fakeUsers[0].youtube_url}
+                                href={fakeUsers[2].youtube_url}
                                 style={{ background: 'url("logo_yt.png") no-repeat center / 100% 100%' }}
                                 target="_blank"
+                                rel="noreferrer"
                             ></a>
                         )}
                     </div>
@@ -93,10 +96,10 @@ function Profile() {
                     <div className={cx('avatar')}>
                         <div
                             className={cx('img')}
-                            style={{ background: `url(${fakeUsers[0].image}) no-repeat center / 101% 101%` }}
+                            style={{ background: `url(${fakeUsers[2].image}) no-repeat center / 101% 101%` }}
                         ></div>
                     </div>
-                    <h1>{fakeUsers[0].name}</h1>
+                    <h1>{fakeUsers[2].name}</h1>
                 </div>
             </header>
 
