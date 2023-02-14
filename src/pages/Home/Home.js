@@ -6,7 +6,9 @@ const cx = classNames.bind(styles);
 function Home() {
     return (
         <div className={cx('wraper')}>
-            <h2>Trang chủ</h2>
+            <div className={cx('image')}>
+                <img src="hello.png" />
+            </div>
         </div>
     );
 }

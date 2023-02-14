@@ -1,5 +1,5 @@
 import classNames from 'classnames/bind';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faBell } from '@fortawesome/free-solid-svg-icons';
 import { Link } from 'react-router-dom';
@@ -14,9 +14,24 @@ import RoleUser from './RoleUser';
 
 const cx = classNames.bind(styles);
 function Header() {
-    const user_Login = true;
+    const [user_Login, setUser_Login] = useState(true);
+    const [user, setUser] = useState({});
+
     const [showNotification, setShowNotification] = useState(false);
     const [showRoleUser, setShowRoleUser] = useState(false);
+
+    const [account, setAccount] = useState('admin7v52');
+    const [password, setPassword] = useState('admin777');
+
+    useEffect(() => {
+        // fetch(`/api/users?account=${account}&password=${password}`)
+        fetch('/api/searches')
+            .then((res) => res.json())
+            .then((data) => {
+                setUser(data[0]);
+            })
+            .catch((err) => console.log(err));
+    }, []);
 
     const handle_Show_Hide_Notification = () => {
         setShowNotification(!showNotification);
@@ -72,13 +87,13 @@ function Header() {
                                 visible={showRoleUser}
                                 render={(attrs) => (
                                     <div className={cx('role-user')} tabIndex="-1" {...attrs}>
-                                        <RoleUser onChildrentClicked={on_Children_Clicked_RoleUser} />
+                                        <RoleUser user={user} onChildrentClicked={on_Children_Clicked_RoleUser} />
                                     </div>
                                 )}
                                 onClickOutside={handle_Show_Hide_RoleUser}
                             >
                                 <div className={cx('use-avatar')} onClick={handle_Show_Hide_RoleUser}>
-                                    <img src="users/admin.png" alt="avatar" />
+                                    <img src={user.image} alt="avatar" />
                                 </div>
                             </HeadlessTippy>
                         </>

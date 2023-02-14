@@ -4,7 +4,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCircleXmark, faMagnifyingGlass } from '@fortawesome/free-solid-svg-icons';
 import HeadlessTippy from '@tippyjs/react/headless';
 
-import * as searchService from '../../../services/searchService';
+// import * as searchService from '../../../services/searchService';
 import styles from './Search.module.scss';
 import FreindItem from '../../../components/FriendsItem';
 import { useDebounce } from '../../../hooks';
@@ -26,12 +26,20 @@ function Search() {
             return;
         }
 
-        const fetchApi = async () => {
-            const result = await searchService.search(debouncedValue);
-            setSearchResult(result);
-        };
+        // Axios fetch Api
+        // const fetchApi = async () => {
+        //     const result = await searchService.search(debouncedValue);
+        //     setSearchResult(result);
+        // };
 
-        fetchApi();
+        // fetchApi();
+
+        fetch(`/api/searches?name=${debouncedValue}&amount=less`)
+            .then((res) => res.json())
+            .then((data) => {
+                setSearchResult(data);
+            })
+            .catch((err) => console.log(err));
     }, [debouncedValue]);
 
     const handleHideResult = () => {

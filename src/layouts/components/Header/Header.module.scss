@@ -141,13 +141,12 @@
 
 .role-user {
     --role-user-width: 200px;
-    width: var(--role-user-width);
+    min-width: var(--role-user-width);
     background-color: var(--body-color);
     display: flex;
     flex-direction: column;
 
     header {
-        width: var(--role-user-width);
         display: flex;
 
         .user {

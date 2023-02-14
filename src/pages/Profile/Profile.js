@@ -1,64 +1,20 @@
 import classNames from 'classnames/bind';
+import { useEffect, useState } from 'react';
 
 import styles from './Profile.module.scss';
 const cx = classNames.bind(styles);
 
 function Profile() {
-    const fakeUsers = [
-        {
-            id: 0,
-            full_name: 'Admin',
-            name: 'Admin',
-            nick_name: 'Admin',
-            image: 'users/admin.png',
-            description: '____',
-            number_phone: '____',
-            facebook_url: 'https://www.facebook.com/nguyenvu.version2319.vn',
-            tiktok_url: 'https://www.tiktok.com/@_7v_52',
-            youtube_url: 'https://www.youtube.com/@7vnguyenvu577',
-        },
-        {
-            id: 1,
-            full_name: 'Phạm Minh Tú',
-            name: 'Minh Tú',
-            nick_name: 'MinTs',
-            birthday: '9/8/2002',
-            description: '____',
-            image: 'friends/Minh_Tu.jpg',
-            number_phone: '0912327601',
-            facebook_url: 'https://www.facebook.com/miinhtus.09',
-            tiktok_url: 'https://www.tiktok.com/@mintts69',
-            youtube_url: '#',
-        },
-        {
-            id: 2,
-            full_name: 'Trần Thị Thảo Vy',
-            name: 'Thảo Vy',
-            nick_name: '_',
-            birthday: '3/5/2002',
-            description: '____',
-            number_phone: '0793923536',
-            image: 'friends/Thao_Vy.jpg',
-            facebook_url: 'https://www.facebook.com/iamvie0305',
-            tiktok_url: 'https://www.tiktok.com/@_imv901',
-            youtube_url: 'https://www.youtube.com/@thaovytranthi2956',
-        },
-        {
-            id: 3,
-            full_name: 'Đoàn Thị Yến Ngọc',
-            name: 'Yen Ngoc',
-            nick_name: 'Rùa Nhi',
-            birthday: '12/1/2002',
-            description: '____',
-            number_phone: '0826631504',
-            image: 'friends/Rua_Nhi.jpg',
-            facebook_url: 'https://www.facebook.com/pi.ngo.169',
-            tiktok_url: 'https://www.tiktok.com/@yenngoc362',
-            youtube_url: '#',
-        },
-    ];
+    const [user, setUser] = useState({});
 
-    const user = fakeUsers[1];
+    useEffect(() => {
+        fetch(`/api/searches?nick_name=${window.location.pathname.slice(2)}`)
+            .then((res) => res.json())
+            .then((data) => {
+                setUser(data);
+            })
+            .catch((err) => console.log(err));
+    });
 
     return (
         <div className={cx('wraper')}>

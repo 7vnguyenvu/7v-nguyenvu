@@ -6,13 +6,13 @@ const cx = classNames.bind(styles);
 
 function FreindItem({ data }) {
     return (
-        <Link to={`/@${data.nickname}`} className={cx('use')}>
+        <Link to={`/@${data.nick_name}`} className={cx('use')}>
             <div className={cx('use-avatar')}>
-                <img src={data.avatar} alt="avatar" />
+                <img src={data.image} alt="avatar" />
             </div>
             <div className={cx('use-body')}>
                 <h4>{data.full_name}</h4>
-                <h6>@{data.nickname}</h6>
+                <h6>@{data.nick_name}</h6>
             </div>
         </Link>
     );
