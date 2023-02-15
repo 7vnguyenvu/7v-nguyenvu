@@ -12,7 +12,7 @@ function RoleUser({ user, onChildrentClicked }) {
                 <div className={cx('user')}>
                     <img src={user.image} alt="avatar" className={cx('user-avatar')} />
                     <div className={cx('user-body')}>
-                        <h4>{user.name}</h4>
+                        <h4>{user.last_name}</h4>
                         <h6>@{user.nick_name}</h6>
                     </div>
                 </div>

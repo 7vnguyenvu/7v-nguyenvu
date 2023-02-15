@@ -89,7 +89,6 @@ function Search() {
                         placeholder="Tìm kiếm..."
                         spellCheck={false}
                         onChange={handleOnChange_Search}
-                        onKeyUp={() => console.log('Key up')}
                         onFocus={handleFocus_Search}
                     />
 

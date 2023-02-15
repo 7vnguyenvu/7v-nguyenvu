@@ -1,7 +1,7 @@
 .wraper {
     width: 100%;
     height: var(--header-height, 60px);
-    box-shadow: 0 1px var(--shadow);
+    box-shadow: 0 0 8px var(--shadow);
     display: flex;
     justify-content: center;
     position: fixed;

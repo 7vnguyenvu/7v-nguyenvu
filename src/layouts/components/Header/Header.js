@@ -25,10 +25,19 @@ function Header() {
 
     useEffect(() => {
         // fetch(`/api/users?account=${account}&password=${password}`)
-        fetch('/api/searches')
-            .then((res) => res.json())
+        fetch(`/api/users?account=${account}&password=${password}`)
+            .then((res_acc) => res_acc.json())
             .then((data) => {
-                setUser(data[0]);
+                if (data != null) {
+                    fetch(`/api/searches?user=${data.account}`)
+                        .then((res_user) => res_user.json())
+                        .then((user) => {
+                            setUser(user);
+                        })
+                        .catch((err) => console.log(err));
+                } else {
+                    console.log('data isNull!');
+                }
             })
             .catch((err) => console.log(err));
     }, []);

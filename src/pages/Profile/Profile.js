@@ -7,11 +7,30 @@ const cx = classNames.bind(styles);
 function Profile() {
     const [user, setUser] = useState({});
 
+    const user_null = {
+        user_account: 'user_account',
+        first_name: 'Surname',
+        last_name: 'Name',
+        full_name: 'Fullname',
+        nick_name: 'Nickname',
+        birthday: 'dd/mm/yyyy',
+        description: '...',
+        image: 'images/friends/default.jpg',
+        number_phone: '...',
+        facebook_url: 'https://www.facebook.com/#',
+        tiktok_url: 'https://www.tiktok.com/#',
+        youtube_url: 'https://www.youtube.com/#',
+    };
+
     useEffect(() => {
         fetch(`/api/searches?nick_name=${window.location.pathname.slice(2)}`)
             .then((res) => res.json())
             .then((data) => {
-                setUser(data);
+                if (data) {
+                    setUser(data);
+                } else {
+                    setUser(user_null);
+                }
             })
             .catch((err) => console.log(err));
     });
@@ -57,7 +76,7 @@ function Profile() {
                             style={{ background: `url(${user.image}) no-repeat center / 101% 101%` }}
                         ></div>
                     </div>
-                    <h1>{user.name}</h1>
+                    <h1>{user.last_name}</h1>
                 </div>
             </header>
 
