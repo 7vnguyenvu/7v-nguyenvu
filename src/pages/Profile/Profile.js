@@ -1,52 +1,53 @@
 import classNames from 'classnames/bind';
 import { useEffect, useState } from 'react';
+import { useLocation } from 'react-router-dom';
 
 import styles from './Profile.module.scss';
 const cx = classNames.bind(styles);
 
 function Profile() {
-    const [user, setUser] = useState({});
-
+    const location = useLocation();
     const user_null = {
-        user_account: 'user_account',
-        first_name: 'Surname',
-        last_name: 'Name',
-        full_name: 'Fullname',
-        nick_name: 'Nickname',
-        birthday: 'dd/mm/yyyy',
-        description: '...',
+        user_account: 'Undefine!',
+        first_name: 'Undefine!',
+        last_name: 'Undefine',
+        full_name: 'Undefine!',
+        nick_name: 'Undefine!',
+        birthday: 'Undefine!',
+        description: 'Undefine!',
         image: 'images/friends/default.jpg',
-        number_phone: '...',
-        facebook_url: 'https://www.facebook.com/#',
-        tiktok_url: 'https://www.tiktok.com/#',
-        youtube_url: 'https://www.youtube.com/#',
+        cover_image: 'images/cover_images/default.png',
+        number_phone: 'Undefine!',
+        facebook_url: 'https://www.facebook.com/#Undefine!',
+        tiktok_url: 'https://www.tiktok.com/#Undefine!',
+        youtube_url: 'https://www.youtube.com/#Undefine!',
     };
 
-    useEffect(() => {
-        fetch(`/api/searches?nick_name=${window.location.pathname.slice(2)}`)
-            .then((res) => res.json())
-            .then((data) => {
-                if (data) {
-                    setUser(data);
-                } else {
-                    setUser(user_null);
-                }
-            })
-            .catch((err) => console.log(err));
-    });
+    const [user, setUser] = useState(user_null);
 
+    useEffect(() => {
+        window.scrollTo({ top: 0 });
+        fetchApi(location.pathname.slice(2));
+    }, [location]);
+
+    const fetchApi = (nickname) => {
+        fetch(`/api/searches?nick_name=${nickname}`)
+            .then((res) => res.json())
+            .then((data) => data && setUser(data))
+            .catch((err) => console.log(err));
+    };
     return (
         <div className={cx('wraper')}>
             <header>
                 <div
                     className={cx('cover-img')}
-                    style={{ background: 'url("cover_image_2.png") no-repeat center / 100% 100%' }}
+                    style={{ background: `url(${user.cover_image}) no-repeat center / 100% 100%` }}
                 >
                     <div className={cx('link-custom')}>
                         {user.facebook_url !== '#' && (
                             <a
                                 href={user.facebook_url}
-                                style={{ background: 'url("logo_fb.png") no-repeat center / 100% 100%' }}
+                                style={{ background: 'url("logos/logo_fb.png") no-repeat center / 100% 100%' }}
                                 target="_blank"
                                 rel="noreferrer"
                             ></a>
@@ -54,7 +55,7 @@ function Profile() {
                         {user.tiktok_url !== '#' && (
                             <a
                                 href={user.tiktok_url}
-                                style={{ background: 'url("logo_tik.png") no-repeat center / 100% 100%' }}
+                                style={{ background: 'url("logos/logo_tik.png") no-repeat center / 100% 100%' }}
                                 target="_blank"
                                 rel="noreferrer"
                             ></a>
@@ -62,7 +63,7 @@ function Profile() {
                         {user.youtube_url !== '#' && (
                             <a
                                 href={user.youtube_url}
-                                style={{ background: 'url("logo_yt.png") no-repeat center / 100% 100%' }}
+                                style={{ background: 'url("logos/logo_yt.png") no-repeat center / 100% 100%' }}
                                 target="_blank"
                                 rel="noreferrer"
                             ></a>

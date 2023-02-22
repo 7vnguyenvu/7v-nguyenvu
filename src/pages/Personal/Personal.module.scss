@@ -1,10 +1,19 @@
 .wraper {
     width: 100%;
-    height: 1200px;
 
     header {
         text-align: right;
-        margin: 20px 0;
+        color: var(--primary);
+        padding: 20px 40px;
+        margin-bottom: 4px;
+        border-bottom-right-radius: 80px;
+        border-top-right-radius: 20px;
+        border-bottom: 4px solid var(--dark-hover);
+        border-right: 4px solid var(--dark-hover);
+
+        h2 {
+            text-shadow: 0.5px 0.5px 1px var(--light);
+        }
     }
 
     .bulkhead {
@@ -17,22 +26,25 @@
     .content {
         display: flex;
         flex-wrap: wrap;
-        // justify-content: center;
+        padding: 0 99px;
+        margin-bottom: 36px;
     }
 }
 
 .friend {
-    width: 235px;
+    width: 210px;
     display: flex;
-    margin: 28px 0 0 32px;
+    align-items: center;
+    margin: 4px;
     padding: 12px;
-    border-radius: 50px;
+    border-radius: 8px;
     color: var(--text);
-    box-shadow: -3px 2px 3px var(--shadow);
+    background-color: var(--dark-transparent);
     transition: all ease 0.3s;
 
     &:hover {
-        color: var(--primary);
+        cursor: pointer;
+        background-color: var(--dark-hover);
 
         .avatar .avatar-img {
             scale: 1.3 1.3;

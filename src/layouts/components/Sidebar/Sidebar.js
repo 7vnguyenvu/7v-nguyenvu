@@ -12,7 +12,7 @@ function Sidebar() {
         <aside className={cx('wraper')}>
             <NavArea>
                 <NavItem title="Trang chủ" to={routes.home} icon={faHouse} />
-                <NavItem title="Bạn bè" to={routes.friends} icon={faAddressBook} />
+                <NavItem title="Cá Nhân" to={routes.personal} icon={faAddressBook} />
                 <NavItem title="Blog" to={routes.blog} icon={faNewspaper} />
             </NavArea>
             <div className={cx('bulkhead')}></div>

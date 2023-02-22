@@ -3,7 +3,7 @@ const routes = {
     login: '/login',
     comments: '/comments',
     blog: '/blog',
-    friends: '/friends',
+    personal: '/personal',
     profile: '/@:info',
     upload: '/upload',
 };

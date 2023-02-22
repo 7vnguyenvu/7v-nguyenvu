@@ -75,7 +75,7 @@ function Search() {
                 render={(attrs) => (
                     <div className={cx('result')} tabIndex="-1" {...attrs} onClick={handleHideResult}>
                         {searchResult.map((result) => (
-                            <FreindItem key={result.id} data={result} />
+                            <FreindItem key={result._id} data={result} />
                         ))}
                     </div>
                 )}

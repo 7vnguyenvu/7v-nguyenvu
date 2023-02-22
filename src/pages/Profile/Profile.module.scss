@@ -42,11 +42,11 @@
                     width: 160px;
                     height: 160px;
                     border-radius: var(--fifty-percent);
-                    border: 6px solid var(--body-color);
+                    border: 6px solid var(--dark-border);
                     overflow: hidden;
 
                     &:active {
-                        border: 8px solid var(--body-color);
+                        border: 8px solid var(--dark-border);
                     }
                 }
             }
